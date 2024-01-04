@@ -1,5 +1,11 @@
 {
     "cSpell.words": [
         "Promptopia"
+    ],
+    "folder-color.pathColors": [
+        {
+            "folderPath": "promptia\\app\\",
+            "color": "foldercolorizer.Pink"
+        }
     ]
 }
