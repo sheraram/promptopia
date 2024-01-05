@@ -19,13 +19,11 @@ const handler = NextAuth({
     // Add Authorized redirect URIs on Google Cloud
   ],
 
-//   Without declaring callbacks session, signIn will not work, and if SignIN not work then 
+  //  a) Without declaring callbacks session, signIn will not work, and if SignIN not work then
   callbacks: {
-    //   We want to be able to get data about user every single time to keep an existing and running session so for that we do next 4-line code which return session containing all details about user
+    //  b) We want to be able to get data about user every single time to keep an existing and running session so for that we do next 4-line code which return session containing all details about user
     async session({ session }) {
-      const sessionUser = await User.findOne({
-        email: session.user.email
-      });
+      const sessionUser = await User.findOne({ email: session.user.email });
       session.user.id = sessionUser._id.toString();
 
       return session;
@@ -52,6 +50,7 @@ const handler = NextAuth({
         return true;
       } catch (error) {
         console.log(error);
+        return false;
       }
     }
   }
