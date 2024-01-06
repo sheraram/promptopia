@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-const PromptCard = ({ post, handleTagClick, handelEdit, handleDelete }) => {
+const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
 
@@ -38,7 +38,7 @@ const PromptCard = ({ post, handleTagClick, handelEdit, handleDelete }) => {
           </div>
         </div>
 
-        <div className="copy_btn" onClick={() => handelCopy()}>
+        <div className="copy_btn" onClick={handelCopy}>
           <Image
             src={
               copied === post.prompt
@@ -63,11 +63,14 @@ const PromptCard = ({ post, handleTagClick, handelEdit, handleDelete }) => {
         <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
           <p
             className="font-inter text-sm green_gradient cursor-pointer"
-            onClick={handelEdit}
+            onClick={handleEdit}
           >
             Edit
           </p>
-          <p className="font-inter text-sm orange_gradient cursor-pointer">
+          <p
+            className="font-inter text-sm orange_gradient cursor-pointer"
+            onClick={handleDelete}
+          >
             Delete
           </p>
         </div>
