@@ -82,7 +82,7 @@ const Feed = () => {
       {searchText ? (
         <PromptCardList
           data={searchedResults}
-          handelTagClick={handleTagClick}
+          handleTagClick={handleTagClick}
         />
       ) : (
         <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
