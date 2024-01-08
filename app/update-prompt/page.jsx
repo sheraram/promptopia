@@ -46,7 +46,7 @@ const EditPrompt = () => {
       });
 
       if (response.ok) {
-        router.push('/profile');
+        router.push('/');
       }
     } catch (error) {
       console.log(error);
