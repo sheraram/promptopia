@@ -19,7 +19,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="flex-between w-full mb-16 pt-3">
+    <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2">
         <Image
           src="/assets/images/logo.svg"
@@ -78,7 +78,7 @@ const Nav = () => {
               height={37}
               className="rounded-full"
               alt="profile"
-              onClick={() => setToggleDropdown((prev) => !prev)}
+              onClick={() => setToggleDropdown(!toggleDropdown)}
             />
             {toggleDropdown && (
               <div className="dropdown">
@@ -125,7 +125,7 @@ const Nav = () => {
           </>
         )}
       </div>
-    </div>
+    </nav>
   );
 };
 
